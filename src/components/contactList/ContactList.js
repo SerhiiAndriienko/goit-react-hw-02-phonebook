@@ -7,7 +7,7 @@ function ContactList({ filter, contacts, onDeleteContact }) {
         <span
           style={{ fontStyle: 'Italic', textAlign: 'center', display: 'block' }}
         >
-          Your phonebook is emply
+          Your phonebook is empty
         </span>
       ) : (
         ''
