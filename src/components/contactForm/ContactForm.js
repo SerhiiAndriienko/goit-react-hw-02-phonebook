@@ -34,6 +34,11 @@ class ContactForm extends Component {
       number: `${this.state.number}`,
       id: nanoid(),
     });
+    this.setState({
+      name: '',
+      number: '',
+    });
+    console.log(this.state);
     this.props.handleValueChange(newArray);
   };
   render() {
@@ -46,7 +51,7 @@ class ContactForm extends Component {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          value={this.name}
+          value={this.state.name}
           onChange={this.handleChange}
         />
         <h4>Number</h4>
@@ -57,7 +62,7 @@ class ContactForm extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           onChange={this.handleChange}
-          value={this.number}
+          value={this.state.number}
         />
         <button type="confirm" onClick={this.addContact}>
           Add contact
